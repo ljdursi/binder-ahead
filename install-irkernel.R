@@ -1,5 +1,3 @@
-install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
-                 repos = c('http://irkernel.github.io/',
-                           'http://cran.utstat.utoronto.ca/'))
-
+install.packages(c('crayon', 'pbdZMQ', 'devtools', 'Cairo'), repos=c('http://cran.utstat.utoronto.ca')
+devtools::install_github(paste0('IRkernel/', c('repr', 'IRdisplay', 'IRkernel')))
 IRkernel::installspec()
