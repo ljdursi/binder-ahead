@@ -12,7 +12,8 @@ RUN apt-get install -y r-base r-recommended r-cran-ggplot2 libzmq3-dev \
 #COPY install-irkernel.R /home/install-irkernel.R
 #COPY install-other.R /home/install-other.R
 
-RUN conda install -c r r-essentials r-recommended 
+RUN conda install -y -c r r-essentials 
+RUN conda install -y -c bioconda bioconductor-deseq  
 
 #RUN R --no-save < /home/install-irkernel.R
 #RUN R --no-save < /home/install-other.R
