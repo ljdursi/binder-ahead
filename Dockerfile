@@ -9,10 +9,12 @@ RUN apt-get install -y r-base r-recommended r-cran-ggplot2 libzmq3-dev \
   libzmq3-dev libcurl4-gnutls-dev libssh2-1-dev
 
 # Add 
-COPY install-irkernel.R /home/install-irkernel.R
-COPY install-other.R /home/install-other.R
+#COPY install-irkernel.R /home/install-irkernel.R
+#COPY install-other.R /home/install-other.R
 
-RUN R --no-save < /home/install-irkernel.R
-RUN R --no-save < /home/install-other.R
+RUN conda install -c r r-essentials r-recommended 
+
+#RUN R --no-save < /home/install-irkernel.R
+#RUN R --no-save < /home/install-other.R
 
 USER main
