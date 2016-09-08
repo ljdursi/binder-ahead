@@ -4,7 +4,9 @@ USER root
 
 # Add R dependencies
 RUN apt-get update
-RUN apt-get install -y r-base r-recommended r-cran-ggplot2 libzmq3-dev libxrender1 xfonts-base xfonts-scalable libsm6 libfontconfig1 libzmq3-dev
+RUN apt-get install -y r-base r-recommended r-cran-ggplot2 libzmq3-dev \
+  libxrender1 xfonts-base xfonts-scalable libsm6 libfontconfig1 \
+  libzmq3-dev libcurl4-gnutls-dev libssh2-1-dev
 
 # Add 
 COPY install-irkernel.R /home/install-irkernel.R
