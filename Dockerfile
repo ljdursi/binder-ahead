@@ -8,7 +8,9 @@ RUN apt-get install -y libzmq3-dev \
   libxrender1 xfonts-base xfonts-scalable libsm6 libfontconfig1 \
   libzmq3-dev libcurl4-gnutls-dev libssh2-1-dev libcairo2-dev
 
-RUN conda install -y -c r r-base=3.2.2 r-essentials=1.1 r-xml r-sqlite
-RUN conda install -y -c bioconda bioconductor-deseq 
+RUN conda config --add channels r
+RUN conda install -y r-base=3.2.2 r-essentials=1.1 
+RUN conda config --add channels bioconda
+RUN conda install -y bioconductor-deseq 
 
 USER main
